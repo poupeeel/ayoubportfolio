@@ -1,4 +1,3 @@
-console.log("App starting...");
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -7,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 const app = express();
-// const PORT = process.env.PORT;
+const PORT = process.env.PORT;
 
 // JWT Secret
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
@@ -215,9 +214,9 @@ app.post('/api/contact', async (req, res) => {
 // Start server only after MongoDB connection is established
 const startServer = async () => {
   await connectToMongoDB();
-//  app.listen(process.env.PORT, '0.0.0.0', () => {
-//  console.log(`Server running on port ${process.env.PORT}`);
-//  });
+ app.listen(process.env.PORT, '0.0.0.0', () => {
+ console.log(`Server running on port ${process.env.PORT}`);
+ });
 };
 
 startServer();
