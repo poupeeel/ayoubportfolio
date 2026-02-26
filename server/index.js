@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const PORT = process.env.PORT;
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ Server is running on port ${port}`);
+  console.log(`✅ Server is running on port ${PORT}`);
 });
 // JWT Secret
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
